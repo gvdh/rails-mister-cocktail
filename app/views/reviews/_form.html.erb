@@ -1,8 +1,16 @@
+<div style="text-align:center; margin: 0 auto">
+
 <%= simple_form_for [@cocktail, @review] do |f| %>
   <div id="namer">
     <%= f.input :title %>
   </div>
+  <div id="namer">
     <%= f.input :content %>
+  </div>
+  <div id="namer">
     <%= f.input :rating, collection: (1..5) %>
+  </div>
   <%= f.submit "Add this review", class: "btn btn-primary" %>
 <% end %>
+
+</div>
