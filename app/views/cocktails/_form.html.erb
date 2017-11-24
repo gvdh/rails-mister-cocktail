@@ -1,6 +1,11 @@
-<%= simple_form_for (@cocktail), id: "contact-form" do |f| %>
-  <%= f.input :name, label: "What's the name of your cocktail ?", id: "your-name" %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
-<% end %>
+
+  <%= simple_form_for (@cocktail) do |f| %>
+    <div id="namer">
+    <%= f.input :name, label: "What's the name of your cocktail ?", id: "your-name", placeholder: "Mojitoooo !" %>
+    </div>
+    <div class="inline-block">
+    <%= f.input :photo, label: false %>
+    <%= f.input :photo_cache, as: :hidden %>
+    </div>
+    <%= f.submit "Add this cocktail !", class: "btn btn-primary" %>
+  <% end %>

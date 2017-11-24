@@ -1,24 +1,36 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path("afof7mukhhihhrp7uztj.jpg") %>');">
-  <div class="banner-content">
+<div class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+
+    <%= cl_image_tag @cocktail.photo, class: "hoverZoomLink", :width => 150, :height => 150 %>
+
     <h1><%= @cocktail.name %></h1>
-    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-    <ul>
+
+    <!-- and role or location -->
+
+  </header>
+
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
+    <ul class="list-inline">
       <% @cocktail.doses.each do |dose| %>
-        <li style="margin: 10px;"><%= dose.description %> - <%= dose.ingredient.name %> - <%= link_to "Delete", dose_path(dose), method: :delete, class: "btn btn-danger" %></li>
+        <li style="margin: 10px">
+          <%= dose.description %> - <%= dose.ingredient.name %> -
+          <%= link_to dose_path(dose), method: :delete do %>
+            <i class="fa fa-times" aria-hidden="true" style="color:red"></i>
+          <% end %>
+          </li>
         <br>
       <% end %>
     </ul>
-    <% @cocktail.reviews.each do |review| %>
-      <ul>
-        <li>
-          <%= review.title %> - <%= review.content %>
-          <%= review.rating %>
-        </li>
-      </ul>
-    <% end %>
-    <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: "btn btn-primary" %>
-
   </div>
-</div>
+  <div class="add">
+    <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    -
+    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: "btn btn-primary" %>
+  </div>
 
+  <!-- some social links to show off -->
+</div>
+</div>
