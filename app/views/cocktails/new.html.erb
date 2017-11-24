@@ -1,9 +1,6 @@
 <div class="container">
   <div class="myform">
-  <%= simple_form_for (@cocktail) do |f| %>
-    <%= f.input :name, label: "What's the name of your cocktail ?" %>
-    <%= f.submit "add a cocktail", class: "btn btn-primary" %>
-  <% end %>
+    <%= render partial: "form" %>
   </div>
 
 </div>
