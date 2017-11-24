@@ -1,3 +1,6 @@
+Cocktail.destroy_all
+Ingredient.destroy_all
+
 Ingredient.create(name: "Absolut")
 Ingredient.create(name: "Polar Ice")
 Ingredient.create(name: "Danzka")
