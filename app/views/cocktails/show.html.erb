@@ -24,9 +24,7 @@
         <br>
       <% end %>
     </ul>
-      <% if @cocktail.reviews %>
-        <p style="font-size: 10px">Latest review : <%= @cocktail.reviews.last.title %> <br> <%= @cocktail.reviews.last.content %></p>
-      <% end %>
+
   </div>
   <div class="add">
     <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
